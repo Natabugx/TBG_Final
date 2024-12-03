@@ -1,12 +1,32 @@
 #include<iostream>
 using namespace std;
+const enum ROOMS{ENTRANCE=7,FOOD_COURT=8, CARTS=9,CHECKOUT=10,PRODUCE =11,PHARMACY=12,BAKERY=13,BACK_ROOMS=14};
+
 int main() {
 	int room = 1;
 	string input;
 
 	while (input != "quit") {
 		switch (room) {
-		case 1: //entrance
+		case 1: //
+		
+		case FOOD_COURT://Food court
+			
+		case CARTS: //Carts
+			
+		case CHECKOUT://Checkout
+			cout << "You are in ___, you can go" << endl;
+			cin >> input;
+			else
+				cout << "sorry, thats not an option" << endl;
+			break;
+		case 1://aisle 1
+			cout << "You are in ___, you can go" << endl;
+			cin >> input;
+			else
+				cout << "sorry, thats not an option" << endl;
+				break;
+		case ENTRANCE://Entrance
 			cout << "you are walking through the entrence, you can go west, north and east" << endl;
 			cin >> input;
 			if (input == "west")
@@ -18,7 +38,7 @@ int main() {
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
-		case 2://Food court
+		case 8://aisle 9
 			cout << "you are in the food court, you can go north and west" << endl;
 			cin >> input;
 			if (input == "north")
@@ -28,8 +48,8 @@ int main() {
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
-		case 3: //Carts
-			cout << "you are in the checkout, you can go west, north, east" endl;
+		case CARTS://carts
+			cout << "you are by the carts, you can go west, north, east" << endl;
 			cin >> input;
 			if (input == "west")
 				room = 4;
@@ -40,43 +60,7 @@ int main() {
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
-		case 4://Checkout
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-			break;
-		case 5://aisle 1
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-				break;
-		case 6://aisle 7
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-				break;
-		case 7://aisle 2
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-				break;
-		case 8://aisle 9
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-				break;
-		case 9://aisle 11
-			cout << "You are in ___, you can go" endl;
-			cin >> input;
-			else
-				cout << "sorry, thats not an option" << endl;
-				break;
-		case 10://Checkout
+		case CHECKOUT://Checkout
 			cout << "You are in ___, you can go" endl;
 			cin >> input;
 			else
