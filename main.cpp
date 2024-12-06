@@ -3,7 +3,7 @@ using namespace std;
 const enum ROOMS { ENTRANCE = 7, FOOD_COURT = 8, CARTS = 9, CHECKOUT = 10, PRODUCE = 11, PHARMACY = 12, BAKERY = 13, BACK_ROOMS = 14 };
 
 int main() {
-	int room = 1;
+	int room = 7;
 	string input;
 
 	while (input != "quit") {
@@ -12,11 +12,11 @@ int main() {
 			cout << "you are walking through the entrence, you can go west, north and east" << endl;
 			cin >> input;
 			if (input == "west")
-				room = 3;
+				room = CARTS;
 			else if (input == "north")
 				room = 6;
 			else if (input == "east")
-				room = 2;
+				room = FOOD_COURT;
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
@@ -26,7 +26,7 @@ int main() {
 			cin >> input;
 			if (input == "north")
 				room = 6;
-			if (input == "west")
+			else if (input == "west")
 				room = ENTRANCE;
 			else
 				cout << "sorry, thats not an option" << endl;
@@ -37,9 +37,9 @@ int main() {
 			cin >> input;
 			if (input == "west")
 				room = CHECKOUT;
-			if (input == "north")
+			else if (input == "north")
 				room = PRODUCE;
-			if (input == "east")
+			else if (input == "east")
 				room = ENTRANCE;
 			else
 				cout << "sorry, thats not an option" << endl;
@@ -54,31 +54,31 @@ int main() {
 				room = CARTS;
 			else
 				cout << "sorry, thats not an option" << endl;
-				break;
+			break;
 
 		case PRODUCE:
 			cout << "You are in the produce, you can go west, east, south" << endl;
 			cin >> input;
 			if (input == "west") {
-				cout << "Do you want to go in Aisle 1, 2, or 3?"
+				cout << "Do you want to go in Aisle 1, 2, or 3?";
 					if (input == "1")
 						room = 1;
 
-					if (input == "2")
-						room = 2;
+				if (input == "2")
+					room = 2;
 
-					if (input == "3")
-						room = 3;
+				if (input == "3")
+					room = 3;
 			}
-				
+
 			if (input == "east") {
-				cout << "Do you want to go in Aisle 4, 5, or 6?"
+				cout << "Do you want to go in Aisle 4, 5, or 6?";
 					if (input == "4")
 						room = 4;
-					if (input == "5")
-						room = 5;
-					if (input == "6")
-						room = 6;
+				if (input == "5")
+					room = 5;
+				if (input == "6")
+					room = 6;
 			}
 			if (input == "south")
 				room = CARTS;
@@ -101,7 +101,11 @@ int main() {
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
-		case BACK_ROOMS;
+		//case BACK_ROOMS:
+
+		}
+	}
+}
 
 		}
 	}
