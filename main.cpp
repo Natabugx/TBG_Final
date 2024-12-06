@@ -82,6 +82,27 @@ int main() {
 			}
 			if (input == "south")
 				room = CARTS;
+			else
+				cout << "sorry, thats not an option" << endl;
+			break;
+		case PHARMACY:
+			cout << "You are in the pharmacy, you can go south" << endl;
+			cin >> input;
+			if (input == "south")
+				room = 1;
+			else
+				cout << "sorry, thats not an option" << endl;
+			break;
+		case BAKERY:
+			cout << "You are in the Backery, you can go south" << endl;
+			cin >> input;
+			if (input == "south")
+				room = 4;
+			else
+				cout << "sorry, thats not an option" << endl;
+			break;
+		case BACK_ROOMS;
+
 		}
 	}
 }
