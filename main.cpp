@@ -3,20 +3,60 @@ using namespace std;
 const enum ROOMS { ENTRANCE = 7, FOOD_COURT = 8, CARTS = 9, CHECKOUT = 10, PRODUCE = 11, PHARMACY = 12, BAKERY = 13, BACK_ROOMS = 14 };
 
 int main() {
-	int room = 7;
+	int room = 1;
 	string input;
 
 	while (input != "quit") {
 		switch (room) {
+		case 1:
+			cout << "You are in Aisle 1, you can go north, east, and south" << endl;
+			cin >> input;
+			if (input == "north")
+				room = PHARMACY;
+			else if (input == "east")
+				room = PRODUCE;
+			else if (input == "south")
+				room = 2;
+			else
+				cout << "Sorry, thats not an option" << endl;
+			break;
+		case 2:
+			count << "You are in Aisle 2, You can go north, east, and south" << endl;
+			cin >> input;
+
+			if (input == "north")
+				room = 1;
+			else if (input == "east")
+				room = PRODUCE;
+			else if (input == "south")
+				room = 3;
+			else
+				cout << "Sorr, thats not an option" << endl;
+			break;
+		case 3:
+			cout << "You are in Aisle 3, You can go north, east, and south" << endl;
+			cin >> input;
+
+			if (input == "north")
+				room = 2;
+			else if (input == "east")
+				room = PRODUCE;
+			else if (input == "south")
+				room = CHECKOUT;
+			else
+				cout << "Sorry, thats not an option" << endl;
+			break; 
+
+		
 		case ENTRANCE://Entrance
 			cout << "you are walking through the entrence, you can go west, north and east" << endl;
 			cin >> input;
 			if (input == "west")
-				room = CARTS;
+				room = 3;
 			else if (input == "north")
 				room = 6;
 			else if (input == "east")
-				room = FOOD_COURT;
+				room = 2;
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
@@ -26,7 +66,7 @@ int main() {
 			cin >> input;
 			if (input == "north")
 				room = 6;
-			else if (input == "west")
+			if (input == "west")
 				room = ENTRANCE;
 			else
 				cout << "sorry, thats not an option" << endl;
@@ -37,9 +77,9 @@ int main() {
 			cin >> input;
 			if (input == "west")
 				room = CHECKOUT;
-			else if (input == "north")
+			if (input == "north")
 				room = PRODUCE;
-			else if (input == "east")
+			if (input == "east")
 				room = ENTRANCE;
 			else
 				cout << "sorry, thats not an option" << endl;
@@ -54,31 +94,31 @@ int main() {
 				room = CARTS;
 			else
 				cout << "sorry, thats not an option" << endl;
-			break;
+				break;
 
 		case PRODUCE:
 			cout << "You are in the produce, you can go west, east, south" << endl;
 			cin >> input;
 			if (input == "west") {
-				cout << "Do you want to go in Aisle 1, 2, or 3?";
+				cout << "Do you want to go in Aisle 1, 2, or 3?"
 					if (input == "1")
 						room = 1;
 
-				if (input == "2")
-					room = 2;
+					if (input == "2")
+						room = 2;
 
-				if (input == "3")
-					room = 3;
+					if (input == "3")
+						room = 3;
 			}
-
+				
 			if (input == "east") {
-				cout << "Do you want to go in Aisle 4, 5, or 6?";
+				cout << "Do you want to go in Aisle 4, 5, or 6?"
 					if (input == "4")
 						room = 4;
-				if (input == "5")
-					room = 5;
-				if (input == "6")
-					room = 6;
+					if (input == "5")
+						room = 5;
+					if (input == "6")
+						room = 6;
 			}
 			if (input == "south")
 				room = CARTS;
@@ -101,7 +141,7 @@ int main() {
 			else
 				cout << "sorry, thats not an option" << endl;
 			break;
-		//case BACK_ROOMS:
+		case BACK_ROOMS;
 
 		}
 	}
