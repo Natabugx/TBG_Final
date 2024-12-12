@@ -1,10 +1,13 @@
 #include<iostream>
+#include<cstdio>
 using namespace std;
 const enum ROOMS { ENTRANCE = 7, FOOD_COURT = 8, CARTS = 9, CHECKOUT = 10, PRODUCE = 11, PHARMACY = 12, BAKERY = 13, BACK_ROOMS = 14 };
 
 void ListGen();
 
 int main() {
+
+	ListGen();
 	int room = ENTRANCE;
 	string input;
 
@@ -94,15 +97,15 @@ int main() {
 				cout << "Do you want to go to the entrance or food court?";
 				cin >> input;
 
-					if (input == "entrance")
-						room = ENTRANCE;
+				if (input == "entrance")
+					room = ENTRANCE;
 
-					else if (input == "food court")
-						room = FOOD_COURT;
+				else if (input == "food court")
+					room = FOOD_COURT;
 
-					else
-						cout << "sorry, thats not an option" << endl;
-					break;
+				else
+					cout << "sorry, thats not an option" << endl;
+				break;
 			}
 
 			else
@@ -110,7 +113,7 @@ int main() {
 			break;
 
 		case ENTRANCE://Entrance
-			cout << "you are walking through the entrence, you can go west, north and east" << endl;
+			cout << "you are walking through the entrance, you can go west, north and east" << endl;
 			cin >> input;
 			if (input == "west")
 				room = CARTS;
@@ -250,24 +253,22 @@ int main() {
 void ListGen() {
 
 	srand(time(NULL));
-	int num = rand() % 100 + 1;
-	cout << "This is your shopping list:" << num << endl;
 
+	string list[5];
+	string foods[30] = {"Strawberries", "Carrots", "Bananas", "Tomatoes", "Broccoli",
+						"Milk", "Cheddar Cheese", "Yogurt", "Butter", "Eggs",
+						"Carrots", "Shrimp", "Chicken Breasts", "Croissants", "Bagels"
+						"Frozen Pizza", "Ice Cream", "Canned Corn", "Wheat Bread","Salt", 
+						"Chips", "Chocolate Bars", "Coffee Beans", "Sparkling Water","Olive Oil", 
+						"Cough Medicine", "Tylenol", "DayQuil", "NyQuil", "Vitimins"
+						
+	};
 
-	if (num < 15) { //15% chance
-		cout << "Milk" << endl;
+	for (int i = 0; i <= 4; i++) {
+		int num = rand() % 30;
+		list[i] = foods[num];
+		printf("Item %d: %s\n", i + 1, list[i].c_str());
 	}
-	else if (num < 20) { //5% chance
-		cout << "Eggs" << endl;
-	}
-	else if (num < 50) { //30% chance
-		cout << "TP" << endl;
-	}
-	else  (num < 75) { //25% chance
-		cout << "Chips" << endl;
-	}
 
-	} //end of List generator-----------------------------------------------
+} //end of List generator-----------------------------------------------
 
-
-}
