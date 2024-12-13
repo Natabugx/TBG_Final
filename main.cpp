@@ -1,7 +1,7 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-const enum ROOMS { ENTRANCE = 7, FOOD_COURT = 8, CARTS = 9, CHECKOUT = 10, PRODUCE = 11, PHARMACY = 12, BAKERY = 13, BACK_ROOMS = 14 };
+const enum ROOMS { ENTRANCE = 7, FOOD_COURT = 8, CARTS = 9, CHECKOUT = 10, PRODUCE = 11, PHARMACY = 12, BAKERY = 13, BACK_ROOMS = 14, START = 15 };
 
 void ListGen();
 
@@ -244,6 +244,8 @@ int main() {
 				cout << "Sorry, thats not an option" << endl;
 			break;
 
+		case ENTRANCE:
+			cout << "Welcome little cuh's yo.  "
 
 		}
 	}
