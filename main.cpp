@@ -9,7 +9,6 @@ void ListGen();
 void CountDown();
 
 int main() {
-	bool gay = false;
 	const int TIME_LIMIT = 600; //Time limit in seconds
 	auto start = chrono::steady_clock::now(); // Record start time
 	bool timerRunning = false;
@@ -18,18 +17,12 @@ int main() {
 
 	int room = START; //Goes to start case when opened
 	int health = 12; //Health set at 10
-	string inventory[10] = { "" };//holds 5 items 
+	string inventory[5] = { "" };//holds 5 items 
 
 
 	string input;//reads strings
 
-	cout << "are you gay? y/n" << endl;
-	cin >> input;
-	if (input == "yes" || input == "Yes" || input == "y") {
-		gay = true;
-	}
-
-	while (input != "quit" && timeLeft > 0 && gay) { // runs while time is above 0 and user does not quit
+	while (input != "quit" && timeLeft > 0) { // runs while time is above 0 and user does not quit
 
 		if (timerRunning == true) { //TIMER
 			auto now = chrono::steady_clock::now();
