@@ -9,33 +9,41 @@ void ListGen();
 void CountDown();
 
 int main() {
+	bool gay = false;
 	const int TIME_LIMIT = 600; //Time limit in seconds
 	auto start = chrono::steady_clock::now(); // Record start time
 	bool timerRunning = false;
 	int timeLeft = 600;
 
 
-	int room = START;
-	int health = 12;
-	string inventory[5] = { "" };
+	int room = START; //Goes to start case when opened
+	int health = 12; //Health set at 10
+	string inventory[10] = { "" };//holds 5 items 
 
 
-	string input;
+	string input;//reads strings
 
-	while (input != "quit" && timeLeft > 0) {
+	cout << "are you gay? y/n" << endl;
+	cin >> input;
+	if (input == "yes" || input == "Yes" || input == "y") {
+		gay = true;
+	}
 
-		if (timerRunning == true) {
+	while (input != "quit" && timeLeft > 0 && gay) { // runs while time is above 0 and user does not quit
+
+		if (timerRunning == true) { //TIMER
 			auto now = chrono::steady_clock::now();
 			timeLeft = TIME_LIMIT - chrono::duration_cast<chrono::seconds>(now - start).count();
+			system("Color F2");
 			cout << "Time left: " << timeLeft / 60 << " minutes " << timeLeft % 60 << " seconds" << "     ";//Show remaining time
 		}
 
-		health--;
+		health--; //HEALTH 
 		cout << "Health: " << health << endl;
 		switch (room) {
 
 		case 1: // Aisle 1 Dairy
-			cout << "You are in Aisle 1 (Dairy). Do you want milk or cheese?" << endl;
+			cout << "You are in Aisle 1 (Dairy) Hope your not lactose intolorent. Do you want milk or cheese?" << endl;
 			cin >> input;
 
 			if (input == "milk") {
@@ -67,8 +75,8 @@ int main() {
 			break;
 
 
-		case 2: //Aisle 2
-			cout << "You are in Aisle 2, You can go north, east, and south" << endl;
+		case 2: //Aisle 2 Meat's
+			cout << "You are in Aisle 2 (Meat's) get your protein, You can go north, east, and south" << endl;
 			cin >> input;
 
 			if (input == "north")
@@ -342,7 +350,7 @@ int main() {
 void ListGen() {
 	srand(time(NULL));
 
-	string list[5];
+	string list[10];
 	string foods[18] = { "Strawberries", "Carrots", // Produce
 						"Milk", "Cheese", //Dairy A1
 						"Shrimp", "Chicken", //Meat's A2
@@ -352,10 +360,10 @@ void ListGen() {
 						"Coffe", "Water", // Beverages A5
 						"Ibuprofen", "Tylenol",//Pharmacy
 						"Towels", "Dish" //Householf Items A6
-						
+
 	};
 
-	for (int i = 0; i <= 4; i++) {
+	for (int i = 0; i <= 9; i++) {
 		int num = rand() % 18;
 		list[i] = foods[num];
 		printf("Item %d: %s\n", i + 1, list[i].c_str());
@@ -367,7 +375,7 @@ void ListGen() {
 void CountDown() {
 	for (int i = 0; i <= 4; i++) {
 		PlaySound(TEXT("countdown.wav"), NULL, SND_FILENAME);
-		Sleep(1000);
+		//Sleep(1000);
 	}
-	
+
 }
